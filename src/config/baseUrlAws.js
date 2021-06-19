@@ -1,10 +1,13 @@
 import axios from 'axios';
-
-const BASE_URL_AWS = process.env.BASE_URL_AWS
+import { setEnvironmentForAws } from "./setEnvironment";
 
 const instance = axios.create({
-    baseURL: BASE_URL_AWS
+    baseURL: setEnvironmentForAws(),
+    headers: {
+        'x-api-key': 'xz28prkZA166lf3zFRAgY8HAknCAIAQh1Y3q8gIe'
+    }
 });
+
 
 export default instance;
 

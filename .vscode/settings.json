@@ -1,0 +1,3 @@
+{
+  "jest.jestCommandLine": "NODE_ENV=dev SM=uk jest"
+}

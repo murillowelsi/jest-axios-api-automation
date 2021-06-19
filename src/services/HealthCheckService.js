@@ -1,5 +1,12 @@
 import baseUrlNode from '../config/baseUrlNode';
 
+baseUrlNode.interceptors.request.use(config => {
+  return config;
+}, error => {
+  return Promise.reject(error);
+});
+
+
 async function getHealthCheck () {
   try {
     const response = await baseUrlNode({
