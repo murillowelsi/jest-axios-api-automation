@@ -7,9 +7,11 @@
   "scripts": {
     "lint": "eslint ./src --ext .js",
     "lint:fix": "eslint --fix ./src --ext .js",
-    "test": "NODE_ENV=dev SM=uk jest",
-    "test:test": "NODE_ENV=preprod SM=uk jest",
-    "test:smoke": "NODE_ENV=dev SM=uk jest -t @smoke",
+    "dev:uk": "NODE_ENV=dev SM=uk",
+    "dev:de": "NODE_ENV=dev SM=de",
+    "test:dev:uk": "yarn dev:uk jest",
+    "test:dev:de": "yarn dev:de jest",
+    "test:smoke": "yarn dev:uk jest -t @smoke",
     "test:watch": "yarn test --watch"
   },
   "devDependencies": {

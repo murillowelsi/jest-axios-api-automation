@@ -1,4 +1,4 @@
-import { getSearchTabs } from '../services/SearchTabs';
+import { getSearchTabs } from '../services/SearchTabsService';
 
 describe('SearchTabs', () => {
   describe('GET /v1/searchtabs', () => {
@@ -7,7 +7,6 @@ describe('SearchTabs', () => {
       expect(response.status).toBe(200);
     });
 
-    it('headers are correct', () => {
-    });
+    it.todo('headers are correct');
   });
 });
