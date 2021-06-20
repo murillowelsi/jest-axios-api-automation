@@ -6,5 +6,8 @@ describe('HealthCheck', () => {
       const response = await getHealthCheck();
       expect(response.status).toBe(200);
     });
+
+    it('should ', async () => {
+    });
   });
 });

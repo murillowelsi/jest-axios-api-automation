@@ -95,7 +95,22 @@ module.exports = {
   // projects: undefined,
 
   // Use this configuration option to add custom reporters to Jest
-  // reporters: "default",
+  reporters: [
+    "default",
+    [
+      "jest-stare",
+      {
+        "resultDir": "report/jest-stare",
+        "reportTitle": "TDA Automation",
+        "additionalResultsProcessors": [
+          "jest-junit"
+        ],
+        "coverageLink": "../../coverage/lcov-report/index.html",
+        "jestStareConfigJson": "jest-stare.json",
+        "jestGlobalConfigJson": "globalStuff.json"
+      }
+    ]
+  ],
 
   // Automatically reset mock state between every test
   // resetMocks: false,
