@@ -1,3 +1,1 @@
-export const
-  ENV = process.env.NODE_ENV,
-  SM = process.env.SM
+export const { SM, TEST, NODE_ENV } = process.env;

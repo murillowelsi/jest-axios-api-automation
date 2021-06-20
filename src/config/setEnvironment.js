@@ -1,17 +1,13 @@
-import { ENV } from "./globals";
-require('dotenv').config({ path: `src/config/env/${ENV}.env` })
+import { NODE_ENV } from './globals';
 
-const BASE_URL_NODE = process.env.BASE_URL_NODE
-const BASE_URL_AWS = process.env.BASE_URL_AWS
+require('dotenv').config({ path: `src/config/env/${NODE_ENV}.env` });
 
-const setEnvironmentForNode = (sm) => {
-    return ENV === 'prod' && sm === 'nl' ?
-        BASE_URL_NODE.replace('SM', `${sm}02`) :
-        BASE_URL_NODE.replace('SM', sm)
-}
+const { BASE_URL_NODE, BASE_URL_AWS } = process.env;
 
-const setEnvironmentForAws = () => {
-    return BASE_URL_AWS
-}
+const setEnvironmentForNode = (sm) => ( NODE_ENV === 'prod' && sm === 'nl'
+  ? BASE_URL_NODE.replace('SM', `${sm}02`)
+  : BASE_URL_NODE.replace('SM', sm));
 
-export { setEnvironmentForNode, setEnvironmentForAws }
+const setEnvironmentForAws = () => BASE_URL_AWS;
+
+export { setEnvironmentForNode, setEnvironmentForAws };

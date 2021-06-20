@@ -1,3 +1,4 @@
 {
-  "jest.jestCommandLine": "NODE_ENV=dev SM=uk jest"
+  "jest.jestCommandLine": "NODE_ENV=dev SM=uk jest",
+  "jestrunner.jestCommand": "NODE_ENV=dev SM=uk jest"
 }

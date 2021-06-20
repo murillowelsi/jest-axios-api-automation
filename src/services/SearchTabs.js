@@ -1,10 +1,10 @@
-import baseUrlAws from "../config/baseUrlAws";
+import baseUrlAws from '../config/baseUrlAws';
 
 async function getSearchTabs() {
   try {
     const response = await baseUrlAws({
-      method: "get",
-      url: "/v1/searchtabs",
+      method: 'get',
+      url: '/v1/searchtabs',
       headers: {
         'Content-Type': 'application/json',
         'app-version': '12.8.0',
@@ -13,16 +13,16 @@ async function getSearchTabs() {
         'correlation-id': '46c8dd96-05e2-44ef-92f3-22e1e974bac1',
         'app-name': 'tui-uk-th',
         'app-locale': 'en-GB',
-        'tui-app-country': 'GB'
-      }
+        'tui-app-country': 'GB',
+      },
     });
 
-    return response
-
+    return response;
   } catch (error) {
     console.error(error);
   }
-};
 
+  return null;
+}
 
-export { getSearchTabs }
+export { getSearchTabs };
